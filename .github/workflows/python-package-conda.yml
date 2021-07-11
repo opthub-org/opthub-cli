@@ -35,5 +35,6 @@ jobs:
         pytest
     - name: Test e2e
       run: |
+        pip install -e .
         opt --version
         opt
