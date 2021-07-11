@@ -7,10 +7,11 @@ import logging
 import os
 from datetime import datetime, timedelta
 from time import sleep
+from typing import Any, Dict, Optional, Sequence
 
 import requests
 import yaml
-from click import DateTime, Group, echo, style
+from click import Command, Context, DateTime, Group, Parameter, echo, style
 from click.types import StringParamType
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
@@ -34,7 +35,11 @@ class AliasedGroup(Group):
     >>> def long_name_command():
     ...     print('This command can be called with `l`!')
     """
-    def get_command(self, ctx, cmd_name):
+    def get_command(
+        self,
+        ctx: Context,
+        cmd_name: str
+    ) -> Optional[Command]:
         ret = Group.get_command(self, ctx, cmd_name)
         if ret is not None:
             return ret
@@ -48,7 +53,7 @@ class AliasedGroup(Group):
 
 
 class StrLength(StringParamType):
-    """A Click option type of string with length validation.
+    """A Click parameter type of string with length validation.
 
     This is basically the same as `str`, except for additional
     functionalities of length validation.
@@ -57,12 +62,22 @@ class StrLength(StringParamType):
     :param max: Maximum length
     :param clamp: Clamp the input if exeeded
     """
-    def __init__(self, min=None, max=None, clamp=False):  # pylint: disable=redefined-builtin
+    def __init__(
+        self,
+        min: Optional[int] = None,  # pylint: disable=redefined-builtin
+        max: Optional[int] = None,  # pylint: disable=redefined-builtin
+        clamp: bool = False
+    ):
         self.min = min
         self.max = max
         self.clamp = clamp
 
-    def convert(self, value, param, ctx):
+    def convert(
+        self,
+        value: Any,
+        param: Optional[Parameter],
+        ctx: Optional[Context]
+    ) -> Optional[str]:
         ret = StringParamType.convert(self, value, param, ctx)
         length = len(ret)
         if self.clamp:
@@ -98,10 +113,18 @@ class DateTimeTz(DateTime):
 
     :param format: Time fromat
     """
-    def __init__(self, format=None):
+    def __init__(
+        self,
+        format: Sequence[str] = None
+    ):
         super().__init__(format)
 
-    def convert(self, value, param, ctx):
+    def convert(
+        self,
+        value: Any,
+        param: Optional[Parameter],
+        ctx: Optional[Context]
+    ) -> Optional[str]:
         dt = DateTime.convert(self, value, param, ctx)
         dt_tz = dt.astimezone()
         return str(dt_tz)
@@ -110,7 +133,7 @@ class DateTimeTz(DateTime):
         return 'DateTimeTz(%d)' % (self.format)
 
 
-def root(ctx):
+def root(ctx: Context) -> Context:
     """Retrieve the root context.
 
     :param ctx: Click context
@@ -121,7 +144,7 @@ def root(ctx):
     return ctx
 
 
-def touch(path, mode=0o666, exist_ok=True):
+def touch(path: str, mode: int = 0o666, exist_ok: bool = True) -> None:
     """Emulate pathlib.Path.touch(mode, exist_ok), which is available in Python 3.4+.
 
     This function behaves as follows:
@@ -145,13 +168,17 @@ def touch(path, mode=0o666, exist_ok=True):
             pass
 
 
-def load_config(ctx, param, value):  # pylint: disable=unused-argument
+def load_config(
+    ctx: Context,
+    param: Parameter,  # pylint: disable=unused-argument
+    value: str
+) -> str:
     """Load `ctx.default_map` from a file.
 
     :param ctx: Click context
     :param param: Parameter info
     :param value: File name
-    :return dict: Loaded config
+    :return str: File name
     """
     rctx = root(ctx)
     config_path = os.path.expanduser(value)
@@ -163,7 +190,10 @@ def load_config(ctx, param, value):  # pylint: disable=unused-argument
     return value
 
 
-def save_config(ctx, value):
+def save_config(
+    ctx: Context,
+    value: str
+) -> Dict[str, Any]:
     """Save `ctx.default_map` to a file.
 
     :param ctx: Click context
@@ -178,7 +208,12 @@ def save_config(ctx, value):
     return rctx.default_map
 
 
-def execute(ctx, document, variable_values=None, quiet=False):
+def execute(
+    ctx: Context,
+    document: str,
+    variable_values: Optional[Dict[str, str]] = None,
+    quiet: bool = False
+) -> Dict[str, Any]:
     """Execute a GraphQL document and print results.
 
     :param ctx: Click context
@@ -246,7 +281,12 @@ def execute(ctx, document, variable_values=None, quiet=False):
     return results
 
 
-def authorize_device(url, client_id, scope, audience):
+def authorize_device(
+    url: str,
+    client_id: str,
+    scope: str,
+    audience: str
+) -> Dict[str, str]:
     """Get new tokens via the device authorization flow.
 
     See https://auth0.com/docs/flows/device-authorization-flow
@@ -306,7 +346,12 @@ def authorize_device(url, client_id, scope, audience):
     return res
 
 
-def refresh_token(url, client_id, refresh_token, scope=None):
+def refresh_token(
+    url: str,
+    client_id: str,
+    refresh_token: str,
+    scope: Optional[str] = None
+) -> Dict[str, str]:
     """Refresh the access token and id token.
 
     See https://auth0.com/docs/tokens/refresh-tokens/use-refresh-tokens
@@ -331,7 +376,9 @@ def refresh_token(url, client_id, refresh_token, scope=None):
     return res
 
 
-def get_token(ctx):
+def get_token(
+    ctx: Context
+) -> Dict[str, str]:
     """Get new tokens.
 
     When a refresh token exists and is not expired, get new tokens via the refresh token API.
@@ -360,7 +407,11 @@ def get_token(ctx):
     return res
 
 
-def str_to_dict(ctx, param, value):  # pylint: disable=unused-argument
+def str_to_dict(
+    ctx: Context,
+    param: Parameter,  # pylint: disable=unused-argument
+    value: Any
+) -> Dict[str, Any]:
     """Convert a YAML string to a dict.
 
     :param ctx: Click context
