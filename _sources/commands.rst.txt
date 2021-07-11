@@ -267,6 +267,53 @@ You can input argments interactively:
    Description jp: これは日本語の解説文です．
 
 
+create match
+^^^^^^^^^^^^
+
+Create a match entity on OptHub.
+
+Usage:
+
+.. code-block:: bash
+
+   opt create match [OPTIONS]
+
+Options:
+
+============================ ====== ================== ========== ========================
+Long                         Short  Type               Default    Description
+============================ ====== ================== ========== ========================
+``--name``                   ``-n`` text               [required] Match name.
+``--competition``            ``-c`` text               [required] Competition ID.
+``--problem``                ``-p`` text               [required] Problem ID.
+``--indicator``              ``-i`` text               [required] Indicator ID.
+``--budget``                 ``-b`` integer range      [required] Budget.
+``--help``                                                        Show help and exit.
+============================ ====== ================== ========== ========================
+
+Examples:
+
+.. code-block:: bash
+
+   $ opt create match --name "Single-objective track" \
+     --competition eccomp2019 \
+     --problem wind-turbine-sop \
+     --indicator best \
+     --budget 10000
+
+
+You can input argments interactively:
+
+.. code-block:: bash
+
+   $ opt create match
+   Name: Single-objective track
+   Competition: eccomp2019
+   Problem: wind-turbine-sop
+   Indicator: best
+   Budget: 10000
+
+
 create problem
 ^^^^^^^^^^^^^^
 
