@@ -1,85 +1,66 @@
 Quickstart
 ==========
 
-There are several ways to use PyTorch-BSF.
+This tutorial instructs how to play a competition on the new competition server lounched this year. On this page, you will try to install a client tool for the competition, create your account, and solve some example problems!
 
+Table of Contents (30 min read)
 
-Run as an MLflow project
-------------------------
+Installation and Registration
+Reading problem Description
+Solving Problems
+Checking Your Results
 
-If you have data and labels for training a Bezier simplex in common file formats such as CSV, JSON, etc., then the easiest way is to invoke PyTorch-BSF via `MLflow`_.
-In this way, some CUI commands for training and prediction are provided without installing PyTorch-BSF.
-On each training and prediction, separation of runtime environment and installation of PyTorch-BSF are automatically handled by MLflow!
+1. Installation and Registration
+--------------------------------
 
-.. _MLflow: https://www.mlflow.org/docs/latest/
+To play competitions, you need to setup the client tool and your account.
 
+1.1. Terminal
+^^^^^^^^^^^^^
 
-Installation
-^^^^^^^^^^^^
+Instructions in this tutorial are performed on the command line. Please use your favorite terminal software, e.g,:
 
-First, install `Miniconda`_.
-Then, install ``mlflow`` conda package from ``conda-forge`` channel:
+- Windows
+  - Power Shell
+  - Command prompt
+  - WSL, WSL2
+  - Cygwin, MinGW
+- Mac
+  - Terminal
+  - iTerm
+- Linux
+  - xterm
+  - Gnome terminal
 
-.. code-block:: bash
+You can also play a competition on your mobile with the following terminal apps (available on the app store):
 
-   conda install -c conda-forge mlflow
+- Android
+  - Termux
+- iPhone (or iOS)
+  - a-Shell
 
-.. _Miniconda: https://docs.conda.io/en/latest/miniconda.html
+1.2. Installation of Python
+---------------------------
 
+The client tool requires Python 3.6 or higher.
+Please check your Python version as follows:
 
-Training
-^^^^^^^^
+.. code:: 
 
-Let's prepare data and labels for training:
+   $ python --version
 
-.. code-block:: bash
+If the version is shown and meets the requirements, you can skip the rest of this subsection.
+Otherwise, you need to install Python on your computer.
 
-   cat << EOS > train_data.tsv
-   1 2
-   4 3
-   5 6
-   EOS
+If you use Windows with Power Shell or Command Prompt, access `Microsoft Store`_ and click the "Install" button.
+If you use other OSs and terminals, install Python via package managers on your OS.
+After installation, please confirm Python of the required version is available.
 
-   cat << EOS > train_label.tsv
-   1
-   2
-   3
-   EOS
+`Microsoft Store`: https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab
 
-.. warning::
-   The data file and label file must have the same number of lines.
+.. code::
 
-Now, you can fit a Bezier simplex to those data and labels with the latest version of PyTorch-BSF:
-
-.. code-block:: bash
-
-   mlflow run https://github.com/rafcc/pytorch-bsf \
-   -P data=train_data.tsv \
-   -P label=train_label.tsv \
-   -P degree=3
-
-
-After the command finished, you will get a trained model in ``mlruns`` directory.
-
-
-Prediction
-^^^^^^^^^^
-
-.. code-block:: bash
-
-   mlflow models predict \
-     --model-uri file://`pwd`/mlruns/0/${run_uuid}/artifacts/model \
-     --content-type csv \
-     --input-path test_data.csv \
-     --output-path test_label.csv
-
-
-You have results in ``test_label.csv``:
-
-.. code-block:: bash
-
-   cat test_label.csv 
-   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+   $ python --version
 
 
 Serve prediction API
