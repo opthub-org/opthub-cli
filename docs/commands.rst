@@ -40,17 +40,17 @@ Usage:
 
 Options:
 
-==================== ===== ================== ========== ========================
-long                 short type               default    description
-==================== ===== ================== ========== ========================
---id                 -id   text               [required] Identifier.
---public / --private       bool               False      Visibility.
---open-at            -o    timestamptz        [required] Open date.
---close-at           -c    timestamptz        [required] Close date.
---description_en     -e    text               [required] Description in English.
---description_ja     -j    text               [required] Description in Japanese.
---help                                                   Show help and exit.
-==================== ===== ================== ========== ========================
+============================ ======= ================== ========== ========================
+long                         short   type               default    description
+============================ ======= ================== ========== ========================
+``--id``                     ``-id`` text               [required] Identifier.
+``--public`` / ``--private``         bool               False      Visibility.
+``--open-at``                ``-o``  timestamptz        [required] Open date.
+``--close-at``               ``-c``  timestamptz        [required] Close date.
+``--description_en``         ``-e``  text               [required] Description in English.
+``--description_ja``         ``-j``  text               [required] Description in Japanese.
+``--help``                                                         Show help and exit.
+============================ ======= ================== ========== ========================
 
 ``timestamptz`` should be in either of the following formats:
 
