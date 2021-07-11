@@ -2,26 +2,36 @@
 """
 Utilities.
 """
-from datetime import datetime, timedelta
 import json
 import logging
 import os
+import sys
+from datetime import datetime, timedelta
 from time import sleep
 
+import requests
+import yaml
 from click import DateTime, Group, echo, style
 from click.types import StringParamType
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
-import requests
-import yaml
 
 _logger = logging.getLogger(__name__)
+
 
 # Default dates for creating a competition
 default_open_at = datetime.utcnow()
 default_close_at = default_open_at + timedelta(days=1)
 default_open_at = default_open_at.strftime('%Y-%m-%dT%H:%M:%S')
 default_close_at = default_close_at.strftime('%Y-%m-%dT%H:%M:%S')
+
+
+if sys.version_info[0] == 2:
+    import errno
+
+    class FileExistsError(OSError):
+        def __init__(self, msg):
+            super(FileExistsError, self).__init__(errno.EEXIST, msg)
 
 
 class AliasedGroup(Group):
