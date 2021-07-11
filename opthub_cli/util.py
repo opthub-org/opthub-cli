@@ -5,7 +5,6 @@ Utilities.
 import json
 import logging
 import os
-import sys
 from datetime import datetime, timedelta
 from time import sleep
 
@@ -24,14 +23,6 @@ default_open_at = datetime.utcnow()
 default_close_at = default_open_at + timedelta(days=1)
 default_open_at = default_open_at.strftime('%Y-%m-%dT%H:%M:%S')
 default_close_at = default_close_at.strftime('%Y-%m-%dT%H:%M:%S')
-
-
-if sys.version_info[0] == 2:
-    import errno
-
-    class FileExistsError(OSError):
-        def __init__(self, msg):
-            super(FileExistsError, self).__init__(errno.EEXIST, msg)
 
 
 class AliasedGroup(Group):
@@ -108,7 +99,7 @@ class DateTimeTz(DateTime):
     :param format: Time fromat
     """
     def __init__(self, format=None):
-        super(DateTimeTz, self).__init__(format)
+        super().__init__(format)
 
     def convert(self, value, param, ctx):
         dt = DateTime.convert(self, value, param, ctx)
