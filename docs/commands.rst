@@ -1,4 +1,4 @@
-Command List
+Opt commands
 ============
 
 OptHub is a collaborative platform to run optimization competitions.
@@ -34,11 +34,18 @@ Organize a competition.
 .. code-block:: bash
 
    opt organize --id competition
+
 Options:
-  -i, --id TEXT                   Identifier.  [required]
-  --public / --private            Visibility.
-  -o, --open-at [%Y-%m-%d|%Y-%m-%dT%H:%M:%S|%Y-%m-%d %H:%M:%S]
-                                  Open date.  [required]
+==================== ===== ================== ========== ===========
+long                 short type               default    description
+==================== ===== ================== ========== ===========
+--id                 -id   text               [required] Identifier.
+--public / --private       bool               False      Visibility.
+--open-at            -o    timestamptz        now()      Open date.
+                           [%Y-%m-%d|
+                           %Y-%m-%dT%H:%M:%S|
+                           %Y-%m-%d %H:%M:%S]
+
   -c, --close-at [%Y-%m-%d|%Y-%m-%dT%H:%M:%S|%Y-%m-%d %H:%M:%S]
                                   Close date.  [required]
   -e, --description_en TEXT       Description in English.  [required]
