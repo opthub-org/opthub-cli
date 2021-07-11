@@ -39,22 +39,22 @@ Usage:
 
 Options:
 
-==================== ===== ================== ========== ===========
+==================== ===== ================== ========== ========================
 long                 short type               default    description
-==================== ===== ================== ========== ===========
+==================== ===== ================== ========== ========================
 --id                 -id   text               [required] Identifier.
 --public / --private       bool               False      Visibility.
---open-at            -o    timestamptz        now()      Open date.
-                           [%Y-%m-%d|
-                           %Y-%m-%dT%H:%M:%S|
-                           %Y-%m-%d %H:%M:%S]
-==================== ===== ================== ========== ===========
+--open-at            -o    timestamptz        [required] Open date.
+--close-at           -c    timestamptz        [required] Close date.
+--description_en     -e    text               [required] Description in English.
+--description_ja     -j    text               [required] Description in Japanese.
+--help                                                   Show help and exit.
+==================== ===== ================== ========== ========================
 
-  -c, --close-at [%Y-%m-%d|%Y-%m-%dT%H:%M:%S|%Y-%m-%d %H:%M:%S]
-                                  Close date.  [required]
-  -e, --description_en TEXT       Description in English.  [required]
-  -j, --description_ja TEXT       Description in Japanese.  [required]
-  --help                          Show this message and exit.
+``timestamptz`` is in the format:
+- ``%Y-%m-%d``
+- ``%Y-%m-%dT%H:%M:%S``
+- ``%Y-%m-%d %H:%M:%S``
 
 
 Problem
