@@ -1,3 +1,3 @@
 GitHub Pages of [opthub-org/opthub-cli](https://github.com/opthub-org/opthub-cli.git)
 ===
-Sphinx html documentation of [e35842b2](https://github.com/opthub-org/opthub-cli/tree/e35842b26302411ce901429e9d3ab2c82353f74c)
+Sphinx html documentation of [1bd9ba89](https://github.com/opthub-org/opthub-cli/tree/1bd9ba89f0522cf656a0ecb943b9263a953aa25e)
