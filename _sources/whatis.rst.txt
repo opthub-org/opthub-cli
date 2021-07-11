@@ -14,6 +14,12 @@ Docker
 Entities
 --------
 
+.. image:: _static/er.png
+   :width: 100%
+   :align: center
+   :alt: Entity relationship diagram
+
+
 User
 ^^^^
 
