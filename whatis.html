@@ -96,7 +96,9 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">What is OptHub?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#docker">Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#community-based">Community-based</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-api-based">Web API based</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtualized">Virtualized</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#entities">Entities</a><ul>
@@ -192,12 +194,22 @@
 <p>OptHub is a collaborative platform to run optimization competitions.</p>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="docker">
-<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="community-based">
+<h3>Community-based<a class="headerlink" href="#community-based" title="Permalink to this headline">¶</a></h3>
+<p>Anyone can add new problems and indicators and share with others.</p>
+</div>
+<div class="section" id="web-api-based">
+<h3>Web API based<a class="headerlink" href="#web-api-based" title="Permalink to this headline">¶</a></h3>
+<p>Every operation is done via GraphQL API.</p>
+</div>
+<div class="section" id="virtualized">
+<h3>Virtualized<a class="headerlink" href="#virtualized" title="Permalink to this headline">¶</a></h3>
+<p>To enable users to implement their contribution in their preferred programming languages and middleware, OptHub uses Docker to wrap runtime environments.</p>
 </div>
 </div>
 <div class="section" id="entities">
 <h2>Entities<a class="headerlink" href="#entities" title="Permalink to this headline">¶</a></h2>
+<p>The following figure shows entities on OptHub.</p>
 <a class="reference internal image-reference" href="_images/er.png"><img alt="Entity relationship diagram" class="align-center" src="_images/er.png" style="width: 100%;" /></a>
 <div class="section" id="user">
 <h3>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
@@ -229,7 +241,7 @@
 </div>
 <div class="section" id="progress">
 <h3>Progress<a class="headerlink" href="#progress" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Progress</span></code> represents the progress of a <code class="docutils literal notranslate"><span class="pre">User</span></code> on a <code class="docutils literal notranslate"><span class="pre">Match</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Progress</span></code> represents the progress of a <code class="docutils literal notranslate"><span class="pre">Match</span></code> for  a <code class="docutils literal notranslate"><span class="pre">User</span></code>.</p>
 </div>
 </div>
 <div class="section" id="opthub-api">

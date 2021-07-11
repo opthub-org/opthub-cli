@@ -100,8 +100,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#installation-of-the-client-tool">1.3. Installation of the Client Tool</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#run-as-a-python-package">Run as a Python package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-as-python-code">Run as Python code</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">What is OptHub?</a></li>
@@ -179,12 +177,15 @@
             
   <div class="section" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>This tutorial instructs how to play a competition on the new competition server lounched this year. On this page, you will try to install a client tool for the competition, create your account, and solve some example problems!</p>
+<p>This tutorial instructs how to play a competition on the new competition server lounched this year.
+On this page, you will try to install a client tool for the competition, create your account, and solve some example problems!</p>
 <p>Table of Contents (30 min read)</p>
-<p>Installation and Registration
-Reading problem Description
-Solving Problems
-Checking Your Results</p>
+<ol class="arabic simple">
+<li><p>Installation and Registration</p></li>
+<li><p>Reading problem Description</p></li>
+<li><p>Solving Problems</p></li>
+<li><p>Checking Your Results</p></li>
+</ol>
 <div class="section" id="installation-and-registration">
 <h2>1. Installation and Registration<a class="headerlink" href="#installation-and-registration" title="Permalink to this headline">¶</a></h2>
 <p>To play competitions, you need to setup the client tool and your account.</p>
@@ -216,7 +217,7 @@ Checking Your Results</p>
 <h3>1.2. Installation of Python<a class="headerlink" href="#installation-of-python" title="Permalink to this headline">¶</a></h3>
 <p>The client tool requires Python 3.6 or higher.
 Please check your Python version as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python --version
 </pre></div>
 </div>
 <p>If the version is shown and meets the requirements, you can skip the rest of this subsection.
@@ -230,68 +231,16 @@ After installation, please confirm Python of the required version is available.<
 </div>
 <div class="section" id="installation-of-the-client-tool">
 <h3>1.3. Installation of the Client Tool<a class="headerlink" href="#installation-of-the-client-tool" title="Permalink to this headline">¶</a></h3>
-<p>To access the competition server, you need the client tool called “Opt”. Please install it as follows:</p>
+<p>To access the competition server, you need the client tool called “Opt”.
+Please install it as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install opthub-client-cli
 </pre></div>
 </div>
-<p>Now, the opt command is available. You can check the version of the client tool as follows:</p>
+<p>Now, the opt command is available.
+You can check the version of the client tool as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>opt --version
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="run-as-a-python-package">
-<h2>Run as a Python package<a class="headerlink" href="#run-as-a-python-package" title="Permalink to this headline">¶</a></h2>
-<p>Assume you have installed Python 3.8 or above.
-Then, install the package:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pytorch-bsf
-</pre></div>
-</div>
-<p>Then, run <cite>torch_bsf</cite> as a module:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m torch_bsf <span class="se">\</span>
-  --model-uri file://<span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/mlruns/0/<span class="si">${</span><span class="nv">run_uuid</span><span class="si">}</span>/artifacts/model <span class="se">\</span>
-  --content-type csv <span class="se">\</span>
-  --input-path test_data.csv <span class="se">\</span>
-  --output-path test_label.csv
-</pre></div>
-</div>
-</div>
-<div class="section" id="run-as-python-code">
-<h2>Run as Python code<a class="headerlink" href="#run-as-python-code" title="Permalink to this headline">¶</a></h2>
-<p>Assume you have installed Python 3.8 or above.
-Then, install the package:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pytorch-bsf
-</pre></div>
-</div>
-<p>Train a model by <code class="docutils literal notranslate"><span class="pre">fit()</span></code>, and call the model to predict.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch_bsf</span>
-
-<span class="c1"># Prepare training data</span>
-<span class="n">ts</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>  <span class="c1"># parameters on a simplex</span>
-   <span class="p">[</span>
-      <span class="p">[</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">],</span>
-   <span class="p">]</span>
-<span class="p">)</span>
-<span class="n">xs</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">ts</span> <span class="o">*</span> <span class="n">ts</span>  <span class="c1"># values corresponding to the parameters</span>
-
-<span class="c1"># Train a model</span>
-<span class="n">bs</span> <span class="o">=</span> <span class="n">torch_bsf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">max_epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="c1"># Predict by the trained model</span>
-<span class="n">t</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">bs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
 </div>
 </div>
 </div>
