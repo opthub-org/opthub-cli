@@ -32,8 +32,8 @@ class AliasedGroup(Group):
     Example
     -------
     >>> @click.group(cls=AliasedGroup)
-    >>> def long_name_command():
-    ...     print('This command can be called with `l`!')
+    >>> def very_long_command_name():
+    ...     print('This command can be called with `v`!')
     """
     def get_command(
         self,
@@ -55,7 +55,7 @@ class AliasedGroup(Group):
 class StrLength(StringParamType):
     """A Click parameter type of string with length validation.
 
-    This is basically the same as `str`, except for additional
+    This is basically the same as ``str``, except for additional
     functionalities of length validation.
 
     :param min: Minimum length
@@ -108,7 +108,7 @@ class StrLength(StringParamType):
 class DateTimeTz(DateTime):
     """A Click option type of datetime with timezone.
 
-    This is basically the same as `click.DateTime`, except for additional
+    This is basically the same as ``click.DateTime``, except for additional
     functionalities of timezone.
 
     :param format: Time fromat
@@ -145,7 +145,7 @@ def root(ctx: Context) -> Context:
 
 
 def touch(path: str, mode: int = 0o666, exist_ok: bool = True) -> None:
-    """Emulate pathlib.Path.touch(mode, exist_ok), which is available in Python 3.4+.
+    """Emulate ``pathlib.Path.touch(mode, exist_ok)``, which is available in Python 3.4+.
 
     This function behaves as follows:
     When the path does not exist, create an empty file with a given mode.
@@ -173,7 +173,7 @@ def load_config(
     param: Parameter,  # pylint: disable=unused-argument
     value: str
 ) -> str:
-    """Load `ctx.default_map` from a file.
+    """Load ``ctx.default_map`` from a file.
 
     :param ctx: Click context
     :param param: Parameter info
@@ -194,7 +194,7 @@ def save_config(
     ctx: Context,
     value: str
 ) -> Dict[str, Any]:
-    """Save `ctx.default_map` to a file.
+    """Save ``ctx.default_map`` to a file.
 
     :param ctx: Click context
     :param value: File name
