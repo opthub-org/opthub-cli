@@ -224,11 +224,11 @@
 <p>Options:</p>
 <table class="docutils align-default">
 <colgroup>
+<col style="width: 26%" />
+<col style="width: 6%" />
+<col style="width: 23%" />
+<col style="width: 13%" />
 <col style="width: 31%" />
-<col style="width: 8%" />
-<col style="width: 28%" />
-<col style="width: 16%" />
-<col style="width: 17%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>long</p></th>
@@ -253,32 +253,40 @@
 </tr>
 <tr class="row-even"><td><p>–open-at</p></td>
 <td><p>-o</p></td>
-<td><p>timestamptz
-[%Y-%m-%d|
-%Y-%m-%dT%H:%M:%S|
-%Y-%m-%d %H:%M:%S]</p></td>
-<td><p>now()</p></td>
+<td><p>timestamptz</p></td>
+<td><p>[required]</p></td>
 <td><p>Open date.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–close-at</p></td>
+<td><p>-c</p></td>
+<td><p>timestamptz</p></td>
+<td><p>[required]</p></td>
+<td><p>Close date.</p></td>
+</tr>
+<tr class="row-even"><td><p>–description_en</p></td>
+<td><p>-e</p></td>
+<td><p>text</p></td>
+<td><p>[required]</p></td>
+<td><p>Description in English.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–description_ja</p></td>
+<td><p>-j</p></td>
+<td><p>text</p></td>
+<td><p>[required]</p></td>
+<td><p>Description in Japanese.</p></td>
+</tr>
+<tr class="row-even"><td><p>–help</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Show help and exit.</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><dl class="simple">
-<dt>-c, –close-at [%Y-%m-%d|%Y-%m-%dT%H:%M:%S|%Y-%m-%d %H:%M:%S]</dt><dd><p>Close date.  [required]</p>
-</dd>
-</dl>
-<dl class="option-list">
-<dt><kbd><span class="option">-e</span>, <span class="option">--description_en <var>TEXT</var></span></kbd></dt>
-<dd><p>Description in English.  [required]</p>
-</dd>
-<dt><kbd><span class="option">-j</span>, <span class="option">--description_ja <var>TEXT</var></span></kbd></dt>
-<dd><p>Description in Japanese.  [required]</p>
-</dd>
-<dt><kbd><span class="option">--help</span></kbd></dt>
-<dd><p>Show this message and exit.</p>
-</dd>
-</dl>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">timestamptz</span></code> is in the format:
+- <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span></code>
+- <code class="docutils literal notranslate"><span class="pre">%Y-%m-%dT%H:%M:%S</span></code>
+- <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code></p>
 </div>
 <div class="section" id="problem">
 <h3>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h3>
