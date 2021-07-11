@@ -94,10 +94,11 @@
               <p class="caption"><span class="caption-text">User guide</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#run-as-an-mlflow-project">Run as an MLflow project</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#training">Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#prediction">Prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-and-registration">1. Installation and Registration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#terminal">1.1. Terminal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-of-python">1.2. Installation of Python</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#serve-prediction-api">Serve prediction API</a></li>
 </ul>
 </li>
@@ -180,63 +181,55 @@
             
   <div class="section" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>There are several ways to use PyTorch-BSF.</p>
-<div class="section" id="run-as-an-mlflow-project">
-<h2>Run as an MLflow project<a class="headerlink" href="#run-as-an-mlflow-project" title="Permalink to this headline">¶</a></h2>
-<p>If you have data and labels for training a Bezier simplex in common file formats such as CSV, JSON, etc., then the easiest way is to invoke PyTorch-BSF via <a class="reference external" href="https://www.mlflow.org/docs/latest/">MLflow</a>.
-In this way, some CUI commands for training and prediction are provided without installing PyTorch-BSF.
-On each training and prediction, separation of runtime environment and installation of PyTorch-BSF are automatically handled by MLflow!</p>
-<div class="section" id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
-<p>First, install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>.
-Then, install <code class="docutils literal notranslate"><span class="pre">mlflow</span></code> conda package from <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge mlflow
+<p>This tutorial instructs how to play a competition on the new competition server lounched this year. On this page, you will try to install a client tool for the competition, create your account, and solve some example problems!</p>
+<p>Table of Contents (30 min read)</p>
+<p>Installation and Registration
+Reading problem Description
+Solving Problems
+Checking Your Results</p>
+<div class="section" id="installation-and-registration">
+<h2>1. Installation and Registration<a class="headerlink" href="#installation-and-registration" title="Permalink to this headline">¶</a></h2>
+<p>To play competitions, you need to setup the client tool and your account.</p>
+<div class="section" id="terminal">
+<h3>1.1. Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
+<p>Instructions in this tutorial are performed on the command line. Please use your favorite terminal software, e.g,:</p>
+<ul class="simple">
+<li><p>Windows
+- Power Shell
+- Command prompt
+- WSL, WSL2
+- Cygwin, MinGW</p></li>
+<li><p>Mac
+- Terminal
+- iTerm</p></li>
+<li><p>Linux
+- xterm
+- Gnome terminal</p></li>
+</ul>
+<p>You can also play a competition on your mobile with the following terminal apps (available on the app store):</p>
+<ul class="simple">
+<li><p>Android
+- Termux</p></li>
+<li><p>iPhone (or iOS)
+- a-Shell</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="installation-of-python">
+<h2>1.2. Installation of Python<a class="headerlink" href="#installation-of-python" title="Permalink to this headline">¶</a></h2>
+<p>The client tool requires Python 3.6 or higher.
+Please check your Python version as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python --version
 </pre></div>
 </div>
-</div>
-<div class="section" id="training">
-<h3>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h3>
-<p>Let’s prepare data and labels for training:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOS &gt; train_data.tsv</span>
-<span class="s">1 2</span>
-<span class="s">4 3</span>
-<span class="s">5 6</span>
-<span class="s">EOS</span>
-
-cat <span class="s">&lt;&lt; EOS &gt; train_label.tsv</span>
-<span class="s">1</span>
-<span class="s">2</span>
-<span class="s">3</span>
-<span class="s">EOS</span>
+<p>If the version is shown and meets the requirements, you can skip the rest of this subsection.
+Otherwise, you need to install Python on your computer.</p>
+<p>If you use Windows with Power Shell or Command Prompt, access <a href="#id1"><span class="problematic" id="id2">`Microsoft Store`_</span></a> and click the “Install” button.
+If you use other OSs and terminals, install Python via package managers on your OS.
+After installation, please confirm Python of the required version is available.</p>
+<p><cite>Microsoft Store</cite>: <a class="reference external" href="https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab">https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python --version
 </pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The data file and label file must have the same number of lines.</p>
-</div>
-<p>Now, you can fit a Bezier simplex to those data and labels with the latest version of PyTorch-BSF:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mlflow run https://github.com/rafcc/pytorch-bsf <span class="se">\</span>
--P <span class="nv">data</span><span class="o">=</span>train_data.tsv <span class="se">\</span>
--P <span class="nv">label</span><span class="o">=</span>train_label.tsv <span class="se">\</span>
--P <span class="nv">degree</span><span class="o">=</span><span class="m">3</span>
-</pre></div>
-</div>
-<p>After the command finished, you will get a trained model in <code class="docutils literal notranslate"><span class="pre">mlruns</span></code> directory.</p>
-</div>
-<div class="section" id="prediction">
-<h3>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mlflow models predict <span class="se">\</span>
-  --model-uri file://<span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/mlruns/0/<span class="si">${</span><span class="nv">run_uuid</span><span class="si">}</span>/artifacts/model <span class="se">\</span>
-  --content-type csv <span class="se">\</span>
-  --input-path test_data.csv <span class="se">\</span>
-  --output-path test_label.csv
-</pre></div>
-</div>
-<p>You have results in <code class="docutils literal notranslate"><span class="pre">test_label.csv</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat test_label.csv
-<span class="o">[</span><span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">1</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span>, <span class="m">2</span><span class="o">]</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="serve-prediction-api">
 <h3>Serve prediction API<a class="headerlink" href="#serve-prediction-api" title="Permalink to this headline">¶</a></h3>
