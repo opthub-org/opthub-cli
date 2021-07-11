@@ -108,7 +108,7 @@ class DateTimeTz(DateTime):
     :param format: Time fromat
     """
     def __init__(self, format=None):
-        super().__init__(format)
+        super(DateTimeTz, self).__init__(format)
 
     def convert(self, value, param, ctx):
         dt = DateTime.convert(self, value, param, ctx)
