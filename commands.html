@@ -105,6 +105,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#organize">organize</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#status">status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#submit">submit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-competition">create competition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-environment">create environment</a></li>
 </ul>
 </li>
 </ul>
@@ -241,7 +243,7 @@
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--public</span></code> / <code class="docutils literal notranslate"><span class="pre">--private</span></code></p></td>
 <td></td>
 <td><p>bool</p></td>
-<td><p>False</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 <td><p>Visibility.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--open-at</span></code></p></td>
@@ -318,15 +320,15 @@ Description jp: これは日本語の解説文です．
 <col style="width: 31%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>long</p></th>
-<th class="head"><p>short</p></th>
-<th class="head"><p>type</p></th>
-<th class="head"><p>default</p></th>
-<th class="head"><p>description</p></th>
+<tr class="row-odd"><th class="head"><p>Long</p></th>
+<th class="head"><p>Short</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>–help</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -345,49 +347,46 @@ Description jp: これは日本語の解説文です．
 <p>Options:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 26%" />
-<col style="width: 6%" />
-<col style="width: 23%" />
-<col style="width: 13%" />
-<col style="width: 32%" />
+<col style="width: 31%" />
+<col style="width: 7%" />
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 29%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>long</p></th>
-<th class="head"><p>short</p></th>
-<th class="head"><p>type</p></th>
-<th class="head"><p>default</p></th>
-<th class="head"><p>description</p></th>
+<tr class="row-odd"><th class="head"><p>Long</p></th>
+<th class="head"><p>Short</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>–match</p></td>
-<td><p>-m</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--match</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-m</span></code></p></td>
 <td><p>INTEGER RANGE</p></td>
 <td><p>[required]</p></td>
 <td><p>Match ID.</p></td>
 </tr>
-<tr class="row-odd"><td><p>–wait / –no-wait</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--wait</span></code> / <code class="docutils literal notranslate"><span class="pre">--no-wait</span></code></p></td>
 <td></td>
 <td><p>bool</p></td>
-<td><p>True</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 <td><p>Wait for evaluation.</p></td>
 </tr>
-<tr class="row-even"><td><p>–interval</p></td>
-<td><p>-i</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--interval</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-i</span></code></p></td>
 <td><p>INTEGER RANGE</p></td>
-<td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
 <td><p>Polling interval to wait.</p></td>
 </tr>
-<tr class="row-odd"><td><p>–solution</p></td>
-<td><p>-x</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--solution</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-x</span></code></p></td>
 <td><p>FILENAME</p></td>
-<td><ul class="simple">
-<li></li>
-</ul>
-</td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
 <td><p>File storing a solution.</p></td>
 </tr>
-<tr class="row-even"><td><p>–help</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -395,6 +394,172 @@ Description jp: これは日本語の解説文です．
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="create-competition">
+<h3>create competition<a class="headerlink" href="#create-competition" title="Permalink to this headline">¶</a></h3>
+<p>Create a competition entity on OptHub.</p>
+<p>Usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>opt create competition <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p>Options:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 7%" />
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Long</p></th>
+<th class="head"><p>Short</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-i</span></code></p></td>
+<td><p>text</p></td>
+<td><p>[required]</p></td>
+<td><p>Identifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--public</span></code> / <code class="docutils literal notranslate"><span class="pre">--private</span></code></p></td>
+<td></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Visibility.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--open-at</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-o</span></code></p></td>
+<td><p>timestamptz</p></td>
+<td><p>[required]</p></td>
+<td><p>Open date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--close-at</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-c</span></code></p></td>
+<td><p>timestamptz</p></td>
+<td><p>[required]</p></td>
+<td><p>Close date.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--description_en</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-e</span></code></p></td>
+<td><p>text</p></td>
+<td><p>[required]</p></td>
+<td><p>Description in English.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--description_ja</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-j</span></code></p></td>
+<td><p>text</p></td>
+<td><p>[required]</p></td>
+<td><p>Description in Japanese.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Show help and exit.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Type <code class="docutils literal notranslate"><span class="pre">timestamptz</span></code> should be in either of the following formats:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%Y-%m-%dT%H:%M:%S</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code></p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opt create competition --id eccomp2020 --public <span class="se">\</span>
+  --open-at <span class="m">2020</span>-10-01T18:00:00 <span class="se">\</span>
+  --close-at <span class="m">2020</span>-12-11T23:59:59 <span class="se">\</span>
+  --description_en <span class="s2">&quot;This is an English description.&quot;</span> <span class="se">\</span>
+  --description_jp <span class="s2">&quot;これは日本語の解説文です．&quot;</span>
+</pre></div>
+</div>
+<p>You can input argments interactively:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opt create competition
+Id: eccomp2020
+Public <span class="o">[</span>y/N<span class="o">]</span>: y
+Open at <span class="o">[</span><span class="m">2021</span>-07-11 <span class="m">11</span>:25:55+09:00<span class="o">]</span>: <span class="m">2020</span>-10-01 <span class="m">18</span>:00:00
+Close at <span class="o">[</span><span class="m">2021</span>-07-12 <span class="m">11</span>:25:55+09:00<span class="o">]</span>: <span class="m">2021</span>-12-11 <span class="m">23</span>:59:59
+Description en: This is an English description.
+Description jp: これは日本語の解説文です．
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-environment">
+<h3>create environment<a class="headerlink" href="#create-environment" title="Permalink to this headline">¶</a></h3>
+<p>Create an environment entity on OptHub.</p>
+<p>Usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>opt create environment <span class="o">[</span>OPTIONS<span class="o">]</span>
+</pre></div>
+</div>
+<p>Options:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 7%" />
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Long</p></th>
+<th class="head"><p>Short</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--match</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-m</span></code></p></td>
+<td><p>integer</p></td>
+<td><p>[required]</p></td>
+<td><p>Match ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--key</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-k</span></code></p></td>
+<td><p>text</p></td>
+<td><p>[required]</p></td>
+<td><p>Variable name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--value</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-v</span></code></p></td>
+<td><p>jsonb</p></td>
+<td><p>[required]</p></td>
+<td><p>Variable value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--public</span></code> / <code class="docutils literal notranslate"><span class="pre">--private</span></code></p></td>
+<td></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Visibility.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Show help and exit.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opt create environment --match <span class="m">20</span> --public <span class="se">\</span>
+  --key RNGBIAS_BIAS_ALPHA <span class="se">\</span>
+  --value <span class="o">[</span><span class="m">1</span>,2,3,4,5,6,7,8,9,10,11,12,13,14,15<span class="o">]</span>
+</pre></div>
+</div>
+<p>You can input argments interactively:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opt create environment
+Id: <span class="m">20</span>
+Public <span class="o">[</span>y/N<span class="o">]</span>: y
+Key: RNGBIAS_BIAS_ALPHA
+Value: <span class="o">[</span><span class="m">1</span>,2,3,4,5,6,7,8,9,10,11,12,13,14,15<span class="o">]</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
