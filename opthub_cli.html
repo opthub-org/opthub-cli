@@ -495,11 +495,12 @@ run competitions.</p>
 <li><p>Create indicators.</p></li>
 <li><p>Create a competition.</p></li>
 <li><p>Create matches.</p></li>
+<li><p>Create environments.</p></li>
 </ol>
 <p>Participants:</p>
 <ol class="arabic simple">
 <li><p>Create a user.</p></li>
-<li><p>Create a solution.</p></li>
+<li><p>Create solutions.</p></li>
 </ol>
 </div>
 <div class="section" id="authorization-model">
@@ -512,6 +513,61 @@ run competitions.</p>
 <li><p><strong>admin</strong>: System administrators.</p></li>
 </ul>
 <p>Permission:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 17%" />
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Object</p></th>
+<th class="head"><p>guest</p></th>
+<th class="head"><p>user</p></th>
+<th class="head"><p>owner</p></th>
+<th class="head"><p>admin</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>User</p></td>
+<td><p>CR</p></td>
+<td><p>CR</p></td>
+<td><p>CRU</p></td>
+<td><p>CRUD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Problem</p></td>
+<td><p>R</p></td>
+<td><p>CR</p></td>
+<td><p>CRU</p></td>
+<td><p>CRUD</p></td>
+</tr>
+<tr class="row-even"><td><p>Indicator</p></td>
+<td><p>R</p></td>
+<td><p>CR</p></td>
+<td><p>CRU</p></td>
+<td><p>CRUD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Competition</p></td>
+<td><p>R</p></td>
+<td><p>CR</p></td>
+<td><p>CRU</p></td>
+<td><p>CRUD</p></td>
+</tr>
+<tr class="row-even"><td><p>Match</p></td>
+<td><p>R</p></td>
+<td><p>CR</p></td>
+<td><p>CRU</p></td>
+<td><p>CRUD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Solution</p></td>
+<td><p>r</p></td>
+<td><p>cr</p></td>
+<td><p>cR</p></td>
+<td><p>CRUD</p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
 <li><p>C: Create an object anytime.</p></li>
 <li><p>R: Read an object anytime.</p></li>
