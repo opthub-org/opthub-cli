@@ -237,10 +237,11 @@ Options:
 ============================ ====== ================== ========== ========================
 Long                         Short  Type               Default    Description
 ============================ ====== ================== ========== ========================
-``--match``                  ``-m`` integer            [required] Match ID.
-``--key``                    ``-k`` text               [required] Variable name.
-``--value``                  ``-v`` jsonb              [required] Variable value.
+``--id``                     ``-i`` text               [required] ID.
+``--image``                  ``-t`` text               [required] Docker image tag.
 ``--public`` / ``--private``        bool               ``False``  Visibility.
+``--description_en``         ``-e`` text               [required] Description in English.
+``--description_ja``         ``-j`` text               [required] Description in Japanese.
 ``--help``                                                        Show help and exit.
 ============================ ====== ================== ========== ========================
 
@@ -248,16 +249,65 @@ Examples:
 
 .. code-block:: bash
 
-   $ opt create environment --match 20 --public \
-     --key RNGBIAS_BIAS_ALPHA \
-     --value [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+   $ opt create indicator --id hypervolume --public \
+     --image opthub/hypervolume:latest \
+     --description_en "This is an English description." \
+     --description_jp "これは日本語の解説文です．"
+
 
 You can input argments interactively:
 
 .. code-block:: bash
 
-   $ opt create environment
-   Id: 20
+   $ opt create indicator
+   Id: hypervolume
    Public [y/N]: y
-   Key: RNGBIAS_BIAS_ALPHA
-   Value: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+   Image: opthub/hypervolume:latest
+   Description en: This is an English description.
+   Description jp: これは日本語の解説文です．
+
+
+create problem
+^^^^^^^^^^^^^^
+
+Create a problem entity on OptHub.
+
+Usage:
+
+.. code-block:: bash
+
+   opt create problem [OPTIONS]
+
+Options:
+
+============================ ====== ================== ========== ========================
+Long                         Short  Type               Default    Description
+============================ ====== ================== ========== ========================
+``--id``                     ``-i`` text               [required] ID.
+``--image``                  ``-t`` text               [required] Docker image tag.
+``--public`` / ``--private``        bool               ``False``  Visibility.
+``--description_en``         ``-e`` text               [required] Description in English.
+``--description_ja``         ``-j`` text               [required] Description in Japanese.
+``--help``                                                        Show help and exit.
+============================ ====== ================== ========== ========================
+
+Examples:
+
+.. code-block:: bash
+
+   $ opt create problem --id sphere --public \
+     --image opthub/sphere:latest \
+     --description_en "This is an English description." \
+     --description_jp "これは日本語の解説文です．"
+
+
+You can input argments interactively:
+
+.. code-block:: bash
+
+   $ opt create indicator
+   Id: sphere
+   Public [y/N]: y
+   Image: opthub/sphere:latest
+   Description en: This is an English description.
+   Description jp: これは日本語の解説文です．

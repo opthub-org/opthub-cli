@@ -21,11 +21,12 @@
     3. Create indicators.
     4. Create a competition.
     5. Create matches.
+    6. Create environments.
 
     Participants:
 
     1. Create a user.
-    2. Create a solution.
+    2. Create solutions.
 
 
     Authorization model
@@ -49,7 +50,7 @@
     Competition  R    CR   CRU   CRUD
     Match        R    CR   CRU   CRUD
     Solution     r    cr   cR    CRUD
-    =========== ===== ==== ===== ====
+    =========== ===== ==== ===== =====
 
     - C: Create an object anytime.
     - R: Read an object anytime.
