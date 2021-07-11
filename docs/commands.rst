@@ -57,57 +57,45 @@ long                 short type               default    description
 - ``%Y-%m-%d %H:%M:%S``
 
 
-Problem
-^^^^^^^
+status
+^^^^^^
 
-``Problem`` represents a problem function such as sphere and rasgrigin to evaluate a solution.
+Show status.
 
-Indicator
-^^^^^^^^^
+Usage:
 
-``Indicator`` represents an indicator function such as hypervolume to score a set of solutions.
+.. code-block:: bash
 
-Competition
-^^^^^^^^^^^
+   opt status
 
-``Competition`` represents a competition consists of one or more matches.
+Options:
 
-
-Match
-^^^^^
-
-``Match`` represents a match held in a competition.
+==================== ===== ================== ========== ========================
+long                 short type               default    description
+==================== ===== ================== ========== ========================
+--help                                                   Show help and exit.
+==================== ===== ================== ========== ========================
 
 
-Environment
-^^^^^^^^^^^
+submit
+^^^^^^
 
-``Environment`` represents an environmental variable that configures docker containers of ``Problem`` and ``Indicator``.
+Submit a solution.
 
+Usage:
 
-Solution
-^^^^^^^^
+.. code-block:: bash
 
-``Solution`` represents a solution submitted to a ``Match``.
+   opt submit [OPTIONS]
 
+Options:
 
-Progress
-^^^^^^^^
-
-``Progress`` represents the progress of a ``Match`` for  a ``User``.
-
-
-OptHub API
-----------
-
-OptHub provides GraphQL API that enables us to operate OptHub entities.
-
-
-OptHub CLI
-----------
-
-OptHub CLI issues GraphQL queries and mutations in a human-friendly way.
-
-
-References
-----------
+==================== ===== ================== ========== ========================
+long                 short type               default    description
+==================== ===== ================== ========== ========================
+--match              -m    INTEGER RANGE      [required] Match ID.
+--wait / --no-wait         bool               True         Wait for evaluation.
+--interval           -i    INTEGER RANGE      2          Polling interval to wait.
+--solution           -x    FILENAME           -          File storing a solution.
+--help                                                   Show help and exit.
+==================== ===== ================== ========== ========================
