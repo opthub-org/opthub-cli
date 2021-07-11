@@ -31,11 +31,14 @@ organize
 
 Organize a competition.
 
+Usage:
+
 .. code-block:: bash
 
-   opt organize --id competition
+   opt organize [OPTIONS]
 
 Options:
+
 ==================== ===== ================== ========== ===========
 long                 short type               default    description
 ==================== ===== ================== ========== ===========
@@ -45,12 +48,14 @@ long                 short type               default    description
                            [%Y-%m-%d|
                            %Y-%m-%dT%H:%M:%S|
                            %Y-%m-%d %H:%M:%S]
+==================== ===== ================== ========== ===========
 
   -c, --close-at [%Y-%m-%d|%Y-%m-%dT%H:%M:%S|%Y-%m-%d %H:%M:%S]
                                   Close date.  [required]
   -e, --description_en TEXT       Description in English.  [required]
   -j, --description_ja TEXT       Description in Japanese.  [required]
   --help                          Show this message and exit.
+
 
 Problem
 ^^^^^^^
