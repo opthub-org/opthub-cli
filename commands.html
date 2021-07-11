@@ -276,10 +276,30 @@
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal notranslate"><span class="pre">timestamptz</span></code> is in the format:
-- <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span></code>
-- <code class="docutils literal notranslate"><span class="pre">%Y-%m-%dT%H:%M:%S</span></code>
-- <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">timestamptz</span></code> should be in either of the following formats:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%Y-%m-%dT%H:%M:%S</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code></p></li>
+</ul>
+<p>Examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opt organize --id eccomp2020 --public <span class="se">\</span>
+--open-at <span class="m">2020</span>-10-01T18:00:00 <span class="se">\</span>
+--close-at <span class="m">2020</span>-12-11T23:59:59 <span class="se">\</span>
+--description_en <span class="s2">&quot;This is an English description.&quot;</span> <span class="se">\</span>
+--description_jp <span class="s2">&quot;これは日本語の解説文です．&quot;</span>
+</pre></div>
+</div>
+<p>You can input argments interactively:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opt organize
+Id: eccomp2020
+Public <span class="o">[</span>y/N<span class="o">]</span>: y
+Open at <span class="o">[</span><span class="m">2021</span>-07-11 <span class="m">11</span>:25:55+09:00<span class="o">]</span>: <span class="m">2020</span>-10-01 <span class="m">18</span>:00:00
+Close at <span class="o">[</span><span class="m">2021</span>-07-12 <span class="m">11</span>:25:55+09:00<span class="o">]</span>: <span class="m">2021</span>-12-11 <span class="m">23</span>:59:59
+Description en: This is an English description.
+Description jp: これは日本語の解説文です．
+</pre></div>
+</div>
 </div>
 <div class="section" id="status">
 <h3>status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
