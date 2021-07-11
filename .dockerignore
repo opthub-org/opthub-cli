@@ -1,0 +1,9 @@
+.eggs/
+.git/
+.venv/
+venv/
+build/
+dist/
+.dockerignore
+.gitignore
+*.egg-info
