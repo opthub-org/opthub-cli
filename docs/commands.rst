@@ -6,6 +6,7 @@ OptHub is a collaborative platform to run optimization competitions.
 
 Concepts
 --------
+There are high-level commands and CRUD commands.
 
 High-level commands
 ^^^^^^^^^^^^^^^^^^^
