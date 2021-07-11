@@ -1,6 +1,6 @@
 TAG ?= opthub-cli
 
-.PHONY: all start image install build stage deploy clean
+.PHONY: all start image install venv build stage deploy clean
 all: image start
 
 start: image
