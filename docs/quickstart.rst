@@ -1,14 +1,15 @@
 Quickstart
 ==========
 
-This tutorial instructs how to play a competition on the new competition server lounched this year. On this page, you will try to install a client tool for the competition, create your account, and solve some example problems!
+This tutorial instructs how to play a competition on the new competition server lounched this year.
+On this page, you will try to install a client tool for the competition, create your account, and solve some example problems!
 
 Table of Contents (30 min read)
 
-Installation and Registration
-Reading problem Description
-Solving Problems
-Checking Your Results
+1. Installation and Registration
+2. Reading problem Description
+3. Solving Problems
+4. Checking Your Results
 
 1. Installation and Registration
 --------------------------------
@@ -47,7 +48,7 @@ Please check your Python version as follows:
 
 .. code-block:: bash
 
-   $ python --version
+   python --version
 
 If the version is shown and meets the requirements, you can skip the rest of this subsection.
 Otherwise, you need to install Python on your computer.
@@ -66,78 +67,18 @@ After installation, please confirm Python of the required version is available.
 1.3. Installation of the Client Tool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To access the competition server, you need the client tool called “Opt”. Please install it as follows:
+To access the competition server, you need the client tool called "Opt".
+Please install it as follows:
 
 .. code-block:: bash
 
    pip install opthub-client-cli
 
-Now, the opt command is available. You can check the version of the client tool as follows:
+Now, the opt command is available.
+You can check the version of the client tool as follows:
 
 .. code-block:: bash
 
    opt --version
 
 
-Run as a Python package
------------------------
-
-Assume you have installed Python 3.8 or above.
-Then, install the package:
-
-.. code-block:: bash
-
-  pip install pytorch-bsf
-
-Then, run `torch_bsf` as a module:
-
-.. code-block:: bash
-
-   python -m torch_bsf \
-     --model-uri file://`pwd`/mlruns/0/${run_uuid}/artifacts/model \
-     --content-type csv \
-     --input-path test_data.csv \
-     --output-path test_label.csv
-
-
-Run as Python code
-------------------
-
-Assume you have installed Python 3.8 or above.
-Then, install the package:
-
-.. code-block:: bash
-
-  pip install pytorch-bsf
-
-Train a model by ``fit()``, and call the model to predict.
-
-.. code-block:: python
-
-   import torch
-   import torch_bsf
-
-   # Prepare training data
-   ts = torch.tensor(  # parameters on a simplex
-      [
-         [3/3, 0/3, 0/3],
-         [2/3, 1/3, 0/3],
-         [2/3, 0/3, 1/3],
-         [1/3, 2/3, 0/3],
-         [1/3, 1/3, 1/3],
-         [1/3, 0/3, 2/3],
-         [0/3, 3/3, 0/3],
-         [0/3, 2/3, 1/3],
-         [0/3, 1/3, 2/3],
-         [0/3, 0/3, 3/3],
-      ]
-   )
-   xs = 1 - ts * ts  # values corresponding to the parameters
-
-   # Train a model
-   bs = torch_bsf.fit(params=ts, values=xs, degree=3, max_epochs=100)
-
-   # Predict by the trained model
-   t = [[0.2, 0.3, 0.5]]
-   x = bs(t)
-   print(f"{t} -> {x}")

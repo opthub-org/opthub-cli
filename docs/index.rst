@@ -15,6 +15,7 @@ The project is on `GitHub`_.
 
    quickstart
    whatis
+   commands
    faq
 
 .. toctree::

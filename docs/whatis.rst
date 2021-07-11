@@ -7,12 +7,28 @@ OptHub is a collaborative platform to run optimization competitions.
 Concepts
 --------
 
-Docker
-^^^^^^
+Community-based
+^^^^^^^^^^^^^^^
+
+Anyone can add new problems and indicators and share with others.
+
+
+Web API based
+^^^^^^^^^^^^^
+
+Every operation is done via GraphQL API.
+
+
+Virtualized
+^^^^^^^^^^^
+
+To enable users to implement their contribution in their preferred programming languages and middleware, OptHub uses Docker to wrap runtime environments.
 
 
 Entities
 --------
+
+The following figure shows entities on OptHub.
 
 .. image:: _static/er.png
    :width: 100%
@@ -62,7 +78,7 @@ Solution
 Progress
 ^^^^^^^^
 
-``Progress`` represents the progress of a ``User`` on a ``Match``.
+``Progress`` represents the progress of a ``Match`` for  a ``User``.
 
 
 OptHub API
