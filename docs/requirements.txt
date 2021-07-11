@@ -1,2 +1,2 @@
--e ..
+-e .
 sphinx_rtd_theme
