@@ -109,8 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-opthub_cli.update">opthub_cli.update module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-opthub_cli.util">opthub_cli.util module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-opthub_cli">Module contents</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-to-run-a-competition">How to run a competition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#authorization-model">Authorization model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#opthub-api">OptHub API</a></li>
 </ul>
 </li>
 </ul>
@@ -479,43 +478,40 @@ When the path exists and exist_ok is False, raise a FileExistsError.</p>
 </div>
 <div class="section" id="module-opthub_cli">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opthub_cli" title="Permalink to this headline">¶</a></h2>
-<p>OptHub API</p>
+<div class="section" id="opthub-api">
+<h3>OptHub API<a class="headerlink" href="#opthub-api" title="Permalink to this headline">¶</a></h3>
 <p>OptHub is a “collaborative optimization” website that provides a platform
 for socially hosting, analyzing, and solving black-box optimization
 problems. On this site, a user host a competition in which other users join
 to solve problems provided by the host user.
 This API provides basic CRUD operations (create, read, update, delete) to
 run competitions.</p>
-<div class="section" id="how-to-run-a-competition">
-<h3>How to run a competition<a class="headerlink" href="#how-to-run-a-competition" title="Permalink to this headline">¶</a></h3>
-<p>Organizers:
-1. Create a user.
-2. Create problems.
-3. Create indicators.
-4. Create a competition.
-5. Create matches.</p>
-<p>Participants:
-1. Create a user.
-2. Create a player.
-3. Create a trial.
-4. Create evaluations.</p>
+<div class="section" id="how-to-hold-a-competition">
+<h4>How to hold a competition<a class="headerlink" href="#how-to-hold-a-competition" title="Permalink to this headline">¶</a></h4>
+<p>Organizers:</p>
+<ol class="arabic simple">
+<li><p>Create a user.</p></li>
+<li><p>Create problems.</p></li>
+<li><p>Create indicators.</p></li>
+<li><p>Create a competition.</p></li>
+<li><p>Create matches.</p></li>
+</ol>
+<p>Participants:</p>
+<ol class="arabic simple">
+<li><p>Create a user.</p></li>
+<li><p>Create a solution.</p></li>
+</ol>
 </div>
 <div class="section" id="authorization-model">
-<h3>Authorization model<a class="headerlink" href="#authorization-model" title="Permalink to this headline">¶</a></h3>
-<p>Roles:
-- guest: Everyone without account.
-- user: Everyone with account.
-- owner: The user who created an object to access.
-- admin: System administrators.</p>
-<p>Permission:
-| Object      | guest | user  | owner | admin |
-<a href="#id1"><span class="problematic" id="id2">|-------------|</span></a>——-<a href="#id3"><span class="problematic" id="id4">|-------|</span></a>——-<a href="#id5"><span class="problematic" id="id6">|-------|</span></a>
-| User        | CR    | CR    | CRU   | CRUD  |
-| Problem     |  R    | CR    | CRU   | CRUD  |
-| Indicator   |  R    | CR    | CRU   | CRUD  |
-| Competition |  R    | CR    | CRU   | CRUD  |
-| Match       |  R    | CR    | CRU   | CRUD  |
-| Solution    |  r    | cr    | cR    | CRUD  |</p>
+<h4>Authorization model<a class="headerlink" href="#authorization-model" title="Permalink to this headline">¶</a></h4>
+<p>Roles:</p>
+<ul class="simple">
+<li><p><strong>guest</strong>: Everyone without account.</p></li>
+<li><p><strong>user</strong>: Everyone with account.</p></li>
+<li><p><strong>owner</strong>: The user who created an object to access.</p></li>
+<li><p><strong>admin</strong>: System administrators.</p></li>
+</ul>
+<p>Permission:</p>
 <ul class="simple">
 <li><p>C: Create an object anytime.</p></li>
 <li><p>R: Read an object anytime.</p></li>
@@ -524,7 +520,8 @@ run competitions.</p>
 <li><p>c: Create an object in the competition period.</p></li>
 <li><p>r: Read an object after the competition period.</p></li>
 </ul>
-<p>Contact: SIG-RBP (<a class="reference external" href="mailto:sig-rbp&#37;&#52;&#48;googlegroups&#46;com">sig-rbp<span>&#64;</span>googlegroups<span>&#46;</span>com</a>)</p>
+<p>Contact: JPNSEC/SIGRBP (<a class="reference external" href="mailto:sig-rbp&#37;&#52;&#48;googlegroups&#46;com">sig-rbp<span>&#64;</span>googlegroups<span>&#46;</span>com</a>)</p>
+</div>
 </div>
 </div>
 </div>
