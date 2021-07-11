@@ -1,0 +1,2 @@
+git+https://github.com/opthub-org/opthub-cli.git@naokihamada/init
+sphinx_rtd_theme
