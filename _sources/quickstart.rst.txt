@@ -40,12 +40,12 @@ You can also play a competition on your mobile with the following terminal apps 
   - a-Shell
 
 1.2. Installation of Python
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The client tool requires Python 3.6 or higher.
 Please check your Python version as follows:
 
-.. code:: 
+.. code-block:: python
 
    $ python --version
 
@@ -58,37 +58,25 @@ After installation, please confirm Python of the required version is available.
 
 `Microsoft Store`: https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab
 
-.. code::
+.. code-block:: python
 
-   $ python --version
-
-
-Serve prediction API
-^^^^^^^^^^^^^^^^^^^^
-
-You can also serve a Web API for prediction:
-
-.. code-block:: bash
-
-   mlflow models serve \
-     --model-uri {Full Path} \
-     --host localhost \
-     --port 5001
+   python --version
 
 
-Request a prediction with HTTP POST method:
+1.3. Installation of the Client Tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: bash
+To access the competition server, you need the client tool called “Opt”. Please install it as follows:
 
-   curl http://localhost:5001/invocations -H 'Content-Type: application/json' -d '{
-     "columns": ["t1", "t2", "t3"],
-     "data": [
-        [0.1, 0.2, 0.7],
-        [0.4, 0.5, 0.1]
-     ]
-   }'
+.. code-block:: python
 
-See for details https://www.mlflow.org/docs/latest/models.html#deploy-mlflow-models
+   pip install opthub-client-cli
+
+Now, the opt command is available. You can check the version of the client tool as follows:
+
+.. code-block:: python
+
+   opt --version
 
 
 Run as a Python package

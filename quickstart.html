@@ -96,10 +96,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation-and-registration">1. Installation and Registration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#terminal">1.1. Terminal</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-of-python">1.2. Installation of Python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#serve-prediction-api">Serve prediction API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-of-python">1.2. Installation of Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-of-the-client-tool">1.3. Installation of the Client Tool</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#run-as-a-python-package">Run as a Python package</a></li>
@@ -214,12 +212,11 @@ Checking Your Results</p>
 - a-Shell</p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="installation-of-python">
-<h2>1.2. Installation of Python<a class="headerlink" href="#installation-of-python" title="Permalink to this headline">¶</a></h2>
+<h3>1.2. Installation of Python<a class="headerlink" href="#installation-of-python" title="Permalink to this headline">¶</a></h3>
 <p>The client tool requires Python 3.6 or higher.
 Please check your Python version as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python --version
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>$ python --version
 </pre></div>
 </div>
 <p>If the version is shown and meets the requirements, you can skip the rest of this subsection.
@@ -228,29 +225,20 @@ Otherwise, you need to install Python on your computer.</p>
 If you use other OSs and terminals, install Python via package managers on your OS.
 After installation, please confirm Python of the required version is available.</p>
 <p><cite>Microsoft Store</cite>: <a class="reference external" href="https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab">https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python --version
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<div class="section" id="serve-prediction-api">
-<h3>Serve prediction API<a class="headerlink" href="#serve-prediction-api" title="Permalink to this headline">¶</a></h3>
-<p>You can also serve a Web API for prediction:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mlflow models serve <span class="se">\</span>
-  --model-uri <span class="o">{</span>Full Path<span class="o">}</span> <span class="se">\</span>
-  --host localhost <span class="se">\</span>
-  --port <span class="m">5001</span>
+</div>
+<div class="section" id="installation-of-the-client-tool">
+<h3>1.3. Installation of the Client Tool<a class="headerlink" href="#installation-of-the-client-tool" title="Permalink to this headline">¶</a></h3>
+<p>To access the competition server, you need the client tool called “Opt”. Please install it as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">opthub</span><span class="o">-</span><span class="n">client</span><span class="o">-</span><span class="n">cli</span>
 </pre></div>
 </div>
-<p>Request a prediction with HTTP POST method:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl http://localhost:5001/invocations -H <span class="s1">&#39;Content-Type: application/json&#39;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">  &quot;columns&quot;: [&quot;t1&quot;, &quot;t2&quot;, &quot;t3&quot;],</span>
-<span class="s1">  &quot;data&quot;: [</span>
-<span class="s1">     [0.1, 0.2, 0.7],</span>
-<span class="s1">     [0.4, 0.5, 0.1]</span>
-<span class="s1">  ]</span>
-<span class="s1">}&#39;</span>
+<p>Now, the opt command is available. You can check the version of the client tool as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">opt</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p>See for details <a class="reference external" href="https://www.mlflow.org/docs/latest/models.html#deploy-mlflow-models">https://www.mlflow.org/docs/latest/models.html#deploy-mlflow-models</a></p>
 </div>
 </div>
 <div class="section" id="run-as-a-python-package">
