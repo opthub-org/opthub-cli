@@ -40,19 +40,19 @@ Usage:
 
 Options:
 
-============================ ======= ================== ========== ========================
-long                         short   type               default    description
-============================ ======= ================== ========== ========================
-``--id``                     ``-id`` text               [required] Identifier.
-``--public`` / ``--private``         bool               False      Visibility.
-``--open-at``                ``-o``  timestamptz        [required] Open date.
-``--close-at``               ``-c``  timestamptz        [required] Close date.
-``--description_en``         ``-e``  text               [required] Description in English.
-``--description_ja``         ``-j``  text               [required] Description in Japanese.
-``--help``                                                         Show help and exit.
-============================ ======= ================== ========== ========================
+============================ ====== ================== ========== ========================
+Long                         Short  Type               Default    Description
+============================ ====== ================== ========== ========================
+``--id``                     ``-i`` text               [required] Identifier.
+``--public`` / ``--private``        bool               False      Visibility.
+``--open-at``                ``-o`` timestamptz        [required] Open date.
+``--close-at``               ``-c`` timestamptz        [required] Close date.
+``--description_en``         ``-e`` text               [required] Description in English.
+``--description_ja``         ``-j`` text               [required] Description in Japanese.
+``--help``                                                        Show help and exit.
+============================ ====== ================== ========== ========================
 
-``timestamptz`` should be in either of the following formats:
+Type ``timestamptz`` should be in either of the following formats:
 
 - ``%Y-%m-%d``
 - ``%Y-%m-%dT%H:%M:%S``
@@ -63,10 +63,10 @@ Examples:
 .. code-block:: bash
 
    $ opt organize --id eccomp2020 --public \
-   --open-at 2020-10-01T18:00:00 \
-   --close-at 2020-12-11T23:59:59 \
-   --description_en "This is an English description." \
-   --description_jp "これは日本語の解説文です．"
+     --open-at 2020-10-01T18:00:00 \
+     --close-at 2020-12-11T23:59:59 \
+     --description_en "This is an English description." \
+     --description_jp "これは日本語の解説文です．"
 
 You can input argments interactively:
 
