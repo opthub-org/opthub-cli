@@ -86,6 +86,17 @@ OptHub API
 
 OptHub provides GraphQL API that enables us to operate OptHub entities.
 
+https://opthub-api.herokuapp.com/v1/graphql
+
+
+OptHub GraphiQL
+---------------
+
+You can explorer OptHub API via Online IDE.
+
+- URL:  https://graphiql-online.com
+- Enter GraphQL Endpoint URL: https://opthub-api.herokuapp.com/v1/graphql
+
 
 OptHub CLI
 ----------
