@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Command List &mdash; OptHub CLI 1.0.0 documentation</title>
+  <title>Opt commands &mdash; OptHub CLI 1.0.0 documentation</title>
   
 
   
@@ -95,7 +95,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="whatis.html">What is OptHub?</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Command List</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Opt commands</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#high-level-commands">High-level commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#crud-commands">CRUD commands</a></li>
@@ -170,7 +170,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Command List</li>
+      <li>Opt commands</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,8 +189,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="command-list">
-<h1>Command List<a class="headerlink" href="#command-list" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="opt-commands">
+<h1>Opt commands<a class="headerlink" href="#opt-commands" title="Permalink to this headline">¶</a></h1>
 <p>OptHub is a collaborative platform to run optimization competitions.</p>
 <div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
@@ -220,16 +220,18 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>opt organize --id competition
 </pre></div>
 </div>
-<dl>
-<dt>Options:</dt><dd><dl class="option-list">
-<dt><kbd><span class="option">-i</span>, <span class="option">--id <var>TEXT</var></span></kbd></dt>
-<dd><p>Identifier.  [required]</p>
-</dd>
-</dl>
-<p>–public / –private            Visibility.
--o, –open-at [%Y-%m-%d|%Y-%m-%dT%H:%M:%S|%Y-%m-%d %H:%M:%S]</p>
+<p>Options:
+==================== ===== ================== ========== ===========
+long                 short type               default    description
+==================== ===== ================== ========== ===========
+–id                 -id   text               [required] Identifier.
+–public / –private       bool               False      Visibility.
+–open-at            -o    timestamptz        now()      Open date.</p>
 <blockquote>
-<div><p>Open date.  [required]</p>
+<div><blockquote>
+<div><p>[%Y-%m-%d|
+%Y-%m-%dT%H:%M:%S|
+%Y-%m-%d %H:%M:%S]</p>
 </div></blockquote>
 <dl class="simple">
 <dt>-c, –close-at [%Y-%m-%d|%Y-%m-%dT%H:%M:%S|%Y-%m-%d %H:%M:%S]</dt><dd><p>Close date.  [required]</p>
@@ -246,8 +248,7 @@
 <dd><p>Show this message and exit.</p>
 </dd>
 </dl>
-</dd>
-</dl>
+</div></blockquote>
 </div>
 <div class="section" id="problem">
 <h3>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h3>
