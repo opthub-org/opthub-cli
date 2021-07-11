@@ -219,3 +219,45 @@ You can input argments interactively:
    Public [y/N]: y
    Key: RNGBIAS_BIAS_ALPHA
    Value: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+
+create indicator
+^^^^^^^^^^^^^^^^
+
+Create an indicator entity on OptHub.
+
+Usage:
+
+.. code-block:: bash
+
+   opt create indicator [OPTIONS]
+
+Options:
+
+============================ ====== ================== ========== ========================
+Long                         Short  Type               Default    Description
+============================ ====== ================== ========== ========================
+``--match``                  ``-m`` integer            [required] Match ID.
+``--key``                    ``-k`` text               [required] Variable name.
+``--value``                  ``-v`` jsonb              [required] Variable value.
+``--public`` / ``--private``        bool               ``False``  Visibility.
+``--help``                                                        Show help and exit.
+============================ ====== ================== ========== ========================
+
+Examples:
+
+.. code-block:: bash
+
+   $ opt create environment --match 20 --public \
+     --key RNGBIAS_BIAS_ALPHA \
+     --value [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+You can input argments interactively:
+
+.. code-block:: bash
+
+   $ opt create environment
+   Id: 20
+   Public [y/N]: y
+   Key: RNGBIAS_BIAS_ALPHA
+   Value: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
