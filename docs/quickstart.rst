@@ -45,7 +45,7 @@ You can also play a competition on your mobile with the following terminal apps 
 The client tool requires Python 3.6 or higher.
 Please check your Python version as follows:
 
-.. code-block:: python
+.. code-block:: bash
 
    $ python --version
 
@@ -56,9 +56,9 @@ If you use Windows with Power Shell or Command Prompt, access `Microsoft Store`_
 If you use other OSs and terminals, install Python via package managers on your OS.
 After installation, please confirm Python of the required version is available.
 
-`Microsoft Store`: https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab
+.. _Microsoft Store: https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l?activetab=pivot:overviewtab
 
-.. code-block:: python
+.. code-block:: bash
 
    python --version
 
@@ -68,13 +68,13 @@ After installation, please confirm Python of the required version is available.
 
 To access the competition server, you need the client tool called “Opt”. Please install it as follows:
 
-.. code-block:: python
+.. code-block:: bash
 
    pip install opthub-client-cli
 
 Now, the opt command is available. You can check the version of the client tool as follows:
 
-.. code-block:: python
+.. code-block:: bash
 
    opt --version
 
